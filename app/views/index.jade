@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    body(ng-app='app')
+        h1 Relay Controller
+        div(ng-controller='modbusCtrl')
+            button(ng-click='turnOnRelay(0)') ON RELAY CH.1
+            button(ng-click='turnOnRelay(1)') ON RELAY CH.2
+            button(ng-click='turnOnRealy(2)') ON RELAY CH.3
+            button(ng-click='turnOnRealy(3)') ON RELAY CH.4 
+            button(ng-click='turnOffRelay(0)') OFF RELAY CH.1
+            button(ng-click='turnOffRelay(1)') OFF RELAY CH.2
+            button(ng-click='turnOffRealy(2)') OFF RELAY CH.3
+            button(ng-click='turnOffRealy(3)') OFF RELAY CH.4
+        script(type='text/javascript', src='/lib/angular/angular.min.js')
+        script(src="/modbusRTU.js")

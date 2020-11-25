@@ -1,0 +1,20 @@
+angular.module('app',[])
+.controller('modbusCtrl',['$scope','$http',function($scope,$http){
+    $scope.turnOnRelay=function(ch){
+        $http.get('http://raspberrypi.local:3000/modbus/on/'+ch)
+        .then((response)=>{
+            console.log(response);
+        }).catch((err)=>{
+            console.log(err);
+        })
+    }
+
+    $scope.turnOffRelay=function(ch){
+        $http.get('http://raspberrypi.local:3000/modbus/off/'+ch)
+        .then((response)=>{
+            console.log(response);
+        }).catch((err)=>{
+            console.log(err);
+        })
+    }
+}])
